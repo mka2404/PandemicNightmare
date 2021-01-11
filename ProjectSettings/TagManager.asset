@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Collect
+  - Box
+  - Rintangan
+  - FallZone
+  - CheckPoint
+  - JumpPad
+  - flag
+  - Door
+  - FinalDoor
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Lantai
+  - MusuhWarrior
+  - Player
+  - Hitbox
+  - FallZone
+  - TempatCuciTangan
+  - MusuhArcher
+  - MusuhBoss
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Pemain
+    uniqueID: 3355207739
+    locked: 0
