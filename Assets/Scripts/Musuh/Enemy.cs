@@ -65,7 +65,7 @@ public class Enemy : MonoBehaviour
             RaycastDebugger();
         }
 
-        //When Player is detected
+        //Jika pemain dideteksi
         if (hit.collider != null)
         {
             EnemyLogic();
@@ -122,6 +122,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    //Untuk bergerak dan patroli
     void Move()
     {
         anim.SetBool("canWalk", true);
@@ -134,6 +135,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+//untuk state serang
     void Attack()
     {
         timer = intTimer; //Reset timer
@@ -143,6 +145,7 @@ public class Enemy : MonoBehaviour
         anim.SetBool("Attack", true);
     }
 
+    //Jeda serang
     void Cooldown()
     {
         timer -= Time.deltaTime;
@@ -183,7 +186,7 @@ public class Enemy : MonoBehaviour
         return transform.position.x > leftLimit.position.x && transform.position.x < rightLimit.position.x;
     }
 
-    private void SelectTarget()
+    private void SelectTarget()// memilih posisi target patroli
     {
         float distanceToLeft = Vector3.Distance(transform.position, leftLimit.position);
         float distanceToRight = Vector3.Distance(transform.position, rightLimit.position);

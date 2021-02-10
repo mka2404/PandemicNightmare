@@ -13,6 +13,12 @@ TagManager:
   - flag
   - Door
   - FinalDoor
+  - YellowKey
+  - YellowLock
+  - BlueLock
+  - RedLock
+  - RedKey
+  - BlueKey
   layers:
   - Default
   - TransparentFX

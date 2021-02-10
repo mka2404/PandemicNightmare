@@ -26,16 +26,6 @@ public class Pemain : MonoBehaviour
     public float cekRadius;
     public LayerMask deteksiLantai;
 
-    //----untuk dinding
-    bool isSentuhDepan;
-    public Transform depanCheck;
-    bool wallJumping;
-    public float wallJumpTime;
-    public float xWallForce;
-    public float yWallForce;
-    bool wallSliding;
-    public float wallSlidingSpeed;
-
     //----- untuk serang ----
     public Transform serangPoint;
     public LayerMask enemyLayer1,enemyLayer2, enemyLayer3;
@@ -87,10 +77,10 @@ public class Pemain : MonoBehaviour
         dashTime = startDashTime;
     }
 
-    private void Update()
-    {
+    // private void Update()
+    // {
 
-    }
+    // }
 
     // Fungsi input gerak
     public void Move(float input)
@@ -154,7 +144,7 @@ public class Pemain : MonoBehaviour
 
             Collider2D[] hitEnemies1 = Physics2D.OverlapCircleAll(serangPoint.position, serangRange, enemyLayer1); //deteksi musuh1
             Collider2D[] hitEnemies2 = Physics2D.OverlapCircleAll(serangPoint.position, serangRange, enemyLayer2); //deteksi musuh2
-             Collider2D[] hitEnemies3 = Physics2D.OverlapCircleAll(serangPoint.position, serangRange, enemyLayer3); //deteksi musuh3
+            Collider2D[] hitEnemies3 = Physics2D.OverlapCircleAll(serangPoint.position, serangRange, enemyLayer3); //deteksi musuh3
             Collider2D hitTempatCuci = Physics2D.OverlapCircle(serangPoint.position, serangRange, cuciLayers); //deteksi tempat cuci tangan
             //damage musuh
             foreach (Collider2D enemy in hitEnemies1)
@@ -313,12 +303,26 @@ public class Pemain : MonoBehaviour
         {
             checkpointPos = collision.transform.position;
         }
+        if (collision.CompareTag("YellowKey")){
+            print("Ambil Kunci Kuning");
+            Destroy(collision.gameObject);
+            GameObject.FindGameObjectWithTag("YellowLock").SetActive(false);
+        }
+        if (collision.CompareTag("BlueKey")){
+            print("Ambil Kunci Biru");
+            Destroy(collision.gameObject);
+            GameObject.FindGameObjectWithTag("BlueLock").SetActive(false);
+        }
+        if (collision.CompareTag("RedKey")){
+            print("Ambil Kunci Merah");
+            Destroy(collision.gameObject);
+            GameObject.FindGameObjectWithTag("RedLock").SetActive(false);
+        }
         
     }
 
     //--- collision
     public void OnCollisionEnter2D(Collision2D other) {
-        
         if (other.gameObject.CompareTag("JumpPad"))
         {
             print("kena trampolin");
